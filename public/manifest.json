@@ -1,0 +1,8 @@
+{
+    "name": "My React App",
+    "short_name": "React App",
+    "description": "An example of a React application with a minimal manifest.json file",
+    "start_url": "/",
+    "display": "browser"
+  }
+  
