@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from '.pages/About';
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Routes>
@@ -12,5 +12,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
