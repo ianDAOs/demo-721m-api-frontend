@@ -1,4 +1,5 @@
 import React from 'react';
+import Title from '../components/Title';
 import Header from '../components/Header';
 import Main from '../components/Main';
 import Footer from '../components/Footer';
@@ -6,6 +7,7 @@ import Footer from '../components/Footer';
 export default function Home() {
     return (
         <div>
+            <Title />
             <Header />
             <Main />
             <Footer />
