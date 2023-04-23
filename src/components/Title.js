@@ -8,7 +8,7 @@ export default function Title() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://m-demo-384522.uc.r.appspot.com/1/0xca206cc53e533838f9edc4c25605ec475f0bbcef/1');
+                const response = await fetch('https://m-demo-384522.uc.r.appspot.com');
                 const data = await response.json();
                 setTitle(data.name);
             } catch (error) {
