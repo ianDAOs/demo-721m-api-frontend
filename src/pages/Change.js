@@ -6,9 +6,7 @@ import Footer from '../components/Footer';
 export default function Change() {
     return (
         <div>
-            <Header />
-            <Main />
-            <Footer />
+            <h1>Change Page</h1>
         </div>
     );
 }

@@ -1,9 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Button() {
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/change');
+    };
+
     return (
-        <div>
-            <p>Modify NFT</p>
-        </div>
+        <button onClick={handleClick}>Modify NFT</button>
     );
 }
