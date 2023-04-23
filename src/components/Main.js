@@ -8,6 +8,7 @@ export default function Main() {
 
     const [metadata, setMetadata] = useState({});
 
+    // Fetch data from Syndicate API and set to state
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -26,7 +27,7 @@ export default function Main() {
             <Title metadata={metadata} />
             <Nft />
             <Metadata metadata={metadata} />
-            <Button />
+            <Button metadata={metadata} />
         </div>
     );
 }
