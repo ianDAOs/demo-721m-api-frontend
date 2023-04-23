@@ -26,7 +26,7 @@ export default function Main() {
         <div>
             <Title metadata={metadata} />
             <Nft />
-            <Metadata />
+            <Metadata metadata={metadata} />
             <Button />
         </div>
     );
