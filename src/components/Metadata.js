@@ -5,13 +5,13 @@ export default function Metadata({ metadata }) {
         <div>
             <p>
                 {'{'}
-                "name":{metadata.name},
-                "style":{metadata.style},
-                "color":{metadata.color},
-                "badge":{metadata.badge},
-                "level":{metadata.level},
-                "XP":{metadata.XP},
-                "updated":{metadata.updated}
+                "name":"{metadata.name}",
+                "style":"{metadata.style}",
+                "color":"{metadata.color}",
+                "badge":"{metadata.badge}",
+                "level":"{metadata.level}",
+                "XP":"{metadata.XP}",
+                "updated":"{metadata.updated}"
                 {'}'}
             </p>
         </div>
