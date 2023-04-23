@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from '../components/Header';
-import MainChange from '../components/MainChange';
+import MainModify from '../components/MainModify';
 import Footer from '../components/Footer';
 
 export default function Change() {
@@ -14,7 +14,7 @@ export default function Change() {
         <div>
             <h1>Change Page</h1>
             <Header />
-            <MainChange metadata={metadata} />
+            <MainModify metadata={metadata} buttonLabel="Submit" />
             <Footer />
         </div>
     );

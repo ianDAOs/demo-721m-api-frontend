@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Button({ metadata }) {
+export default function Button({ metadata, buttonLabel }) {
 
     const navigate = useNavigate();
 
@@ -11,6 +11,6 @@ export default function Button({ metadata }) {
     };
 
     return (
-        <button onClick={handleClick}>Modify NFT</button>
+        <button onClick={handleClick}>{buttonLabel}</button>
     );
 }
