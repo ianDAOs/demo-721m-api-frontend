@@ -6,7 +6,7 @@ import Button from './Button';
 
 export default function Main() {
 
-    const [metadata, setMetadata] = useState(null);
+    const [metadata, setMetadata] = useState({});
 
     // Fetch the title from the Syndicate API and set it in state
     useEffect(() => {
