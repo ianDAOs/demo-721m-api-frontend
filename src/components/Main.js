@@ -8,7 +8,6 @@ export default function Main() {
 
     const [metadata, setMetadata] = useState({});
 
-    // Fetch the title from the Syndicate API and set it in state
     useEffect(() => {
         const fetchData = async () => {
             try {
