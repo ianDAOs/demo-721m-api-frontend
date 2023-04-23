@@ -7,6 +7,9 @@ export default function Change() {
     return (
         <div>
             <h1>Change Page</h1>
+            <Header />
+            <Main />
+            <Footer />
         </div>
     );
 }
