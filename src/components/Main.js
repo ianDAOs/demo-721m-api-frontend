@@ -4,7 +4,7 @@ import Nft from './Nft';
 import Metadata from './Metadata';
 import Button from './Button';
 
-export default function Main(buttonLabel) {
+export default function Main({ buttonLabel }) {
 
     const [metadata, setMetadata] = useState({});
 

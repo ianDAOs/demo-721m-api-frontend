@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <div>
             <Header />
-            <Main buttonLabel="Modify NFT" />
+            <Main buttonLabel='Modify NFT' />
             <Footer />
         </div>
     );

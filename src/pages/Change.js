@@ -14,7 +14,7 @@ export default function Change() {
         <div>
             <h1>Change Page</h1>
             <Header />
-            <MainModify metadata={metadata} buttonLabel="Submit" />
+            <MainModify metadata={metadata} buttonLabel='Submit' />
             <Footer />
         </div>
     );
