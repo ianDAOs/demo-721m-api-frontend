@@ -11,8 +11,9 @@ export default function Options({ metadata, setMetadata }) {
     const [currentColor, setCurrentColor] = useState(metadata.color);
 
     useEffect(() => {
-        setMetadata({ ...metadata, style: currentStyle, color: currentColor });
-    }, [currentStyle, currentColor, metadata, setMetadata]);
+        // Preserve other metadata fields/values when updating the state
+        setMetadata(prevMetadata => ({ ...prevMetadata, style: currentStyle, color: currentColor }));
+    }, [currentStyle, currentColor, setMetadata]);
 
     return (
         <div>

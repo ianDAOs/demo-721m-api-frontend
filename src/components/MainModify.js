@@ -4,7 +4,7 @@ import Nft from './Nft';
 import Options from './Options';
 import Button from './Button';
 
-export default function MainModify({ initialMetadata, buttonLabel }) {
+export default function MainModify({ metadata: initialMetadata, buttonLabel }) {
 
     const [metadata, setMetadata] = useState(initialMetadata);
 
