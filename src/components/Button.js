@@ -14,7 +14,7 @@ export default function Button({ metadata, buttonLabel }) {
 
             // Make the API call to your proxy server
             try {
-                const response = await axios.post('https://your-proxy-server-url.com/update-metadata', {
+                const response = await axios.post('https://m-demo-384522.uc.r.appspot.com/update-metadata', {
                     style: metadata.style,
                     color: metadata.color
                 });
