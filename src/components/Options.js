@@ -11,7 +11,7 @@ export default function Options({ metadata, setMetadata }) {
 
     useEffect(() => {
         setMetadata({ ...metadata, style: currentStyle, color: currentColor });
-    }, [currentStyle, currentColor]);
+    }, [currentStyle, currentColor, metadata, setMetadata]);
 
     return (
         <div>
