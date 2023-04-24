@@ -4,7 +4,7 @@ import Selector from './Selector';
 export default function Options({ metadata }) {
 
     // Array with style options and useState hook
-    const styles = ['Sneakers', 'Basketball Shoes', 'Running Shoes'];
+    const styles = ['Low-rise sneaker', 'Basketball shoe', 'Running shoe'];
     const [currentStyle, setCurrentStyle] = useState(metadata.style);
 
     // Array with color options and useState hook
