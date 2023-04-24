@@ -18,8 +18,10 @@ export default function Button({ metadata, buttonLabel }) {
 
                 // Check for a successful response
                 if (response.status === 200) {
-                    // Navigate to the home page
-                    navigate('/');
+                    // Wait for the loading animation to finish, then navigate to the home page
+                    setTimeout(() => {
+                        navigate('/');
+                    }, 8000); // Adjust this value according to your loading animation duration
                 } else {
                     console.error('Error updating token metadata:', response);
                 }
