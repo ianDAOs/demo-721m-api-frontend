@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Selector from './Selector';
 
 export default function Options({ metadata, setMetadata }) {
+
     const styles = ['Low-rise sneaker', 'Basketball shoe', 'Running shoe'];
     const [currentStyle, setCurrentStyle] = useState(metadata.style);
 
@@ -29,4 +30,5 @@ export default function Options({ metadata, setMetadata }) {
             />
         </div>
     );
+
 }
