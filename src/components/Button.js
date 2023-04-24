@@ -7,7 +7,7 @@ export default function Button({ metadata, buttonLabel }) {
 
     // Handle the click event, navigate to the change page, and pass the metadata
     const handleClick = () => {
-        navigate('/change', { state: { metadata } });
+        navigate('/modify', { state: { metadata } });
     };
 
     return (

@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import MainModify from '../components/MainModify';
 import Footer from '../components/Footer';
 
-export default function Change() {
+export default function Modify() {
 
     // Get the metadata from the location state
     const location = useLocation();
@@ -12,7 +12,7 @@ export default function Change() {
 
     return (
         <div>
-            <h1>Change Page</h1>
+            <h1>Modify Page</h1>
             <Header />
             <MainModify metadata={metadata} buttonLabel='Submit' />
             <Footer />

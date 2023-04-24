@@ -2,6 +2,8 @@ import React from 'react';
 import SelectorButton from './SelectorButton';
 
 export default function Selector({ label, options, currentOption, setCurrentOption }) {
+
+    // Function to change the current option within the array
     const handleOptionChange = (delta) => {
         const currentIndex = options.indexOf(currentOption);
         const nextIndex = (currentIndex + delta + options.length) % options.length;
