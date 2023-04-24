@@ -31,7 +31,7 @@ export default function Button({ metadata, buttonLabel }) {
             }
         } else if (buttonLabel === 'Modify NFT') {
             // Navigate to the /modify route
-            navigate('/modify');
+            navigate('/modify', { state: { metadata } });
         }
     };
 
