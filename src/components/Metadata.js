@@ -14,7 +14,7 @@ export default function Metadata({ metadata }) {
             <p>
                 Metadata
                 {'{'}
-                "name":"{metadata.name}",
+                "product":"{metadata.product}",
                 "image":"TBD",
                 "style":"{metadata.style}",
                 "color":"{metadata.color}",
