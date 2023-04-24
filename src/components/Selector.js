@@ -1,5 +1,5 @@
 import React from 'react';
-import OptionButton from './OptionButton';
+import SelectorButton from './SelectorButton';
 
 export default function Selector({ label, options, currentOption, setCurrentOption }) {
     const handleOptionChange = (delta) => {
@@ -10,9 +10,9 @@ export default function Selector({ label, options, currentOption, setCurrentOpti
 
     return (
         <div>
-            <OptionButton label="Prev" onClick={() => handleOptionChange(-1)} />
+            <SelectorButton label="Prev" onClick={() => handleOptionChange(-1)} />
             <p>{label}: {currentOption}</p>
-            <OptionButton label="Next" onClick={() => handleOptionChange(1)} />
+            <SelectorButton label="Next" onClick={() => handleOptionChange(1)} />
         </div>
     );
 }
