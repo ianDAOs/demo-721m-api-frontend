@@ -12,7 +12,7 @@ export default function Main({ buttonLabel }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://m-demo-384522.uc.r.appspot.com');
+                const response = await fetch('https://m-demo-384522.uc.r.appspot.com/get-metadata');
                 const data = await response.json();
                 setMetadata(data);
             } catch (error) {
