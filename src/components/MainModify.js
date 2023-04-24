@@ -30,7 +30,7 @@ export default function MainModify({ metadata: initialMetadata, buttonLabel }) {
                     "color":"{metadata.color}",
                     "badge":"{metadata.badge}",
                     "level":"{metadata.level}",
-                    "XP":"{metadata.XP}",
+                    "xp":"{metadata.xp}",
                     "updated":"{metadata.updated}"
                     {'}'}
                 </p>
