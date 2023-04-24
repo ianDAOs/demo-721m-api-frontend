@@ -10,7 +10,7 @@ export default function MainModify({ metadata, buttonLabel }) {
             <Title metadata={metadata} />
             <Nft />
             <Options metadata={metadata} />
-            <Button buttonLabel={buttonLabel} />
+            <Button metadata={metadata} buttonLabel={buttonLabel} />
         </div>
     );
 
