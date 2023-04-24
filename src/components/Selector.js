@@ -10,9 +10,9 @@ export default function Selector({ label, options, currentOption, setCurrentOpti
 
     return (
         <div>
-            <SelectorButton label="Prev" onClick={() => handleOptionChange(-1)} />
+            <SelectorButton buttonLabel="Prev" onClick={() => handleOptionChange(-1)} />
             <p>{label}: {currentOption}</p>
-            <SelectorButton label="Next" onClick={() => handleOptionChange(1)} />
+            <SelectorButton buttonLabel="Next" onClick={() => handleOptionChange(1)} />
         </div>
     );
 }
