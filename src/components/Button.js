@@ -9,6 +9,9 @@ export default function Button({ metadata, buttonLabel }) {
     // Handle the click event, make the API call, then navigate to the change page
     const handleClick = async () => {
         if (buttonLabel === 'Submit') {
+            // Navigate to the loading page
+            navigate('/loading');
+
             // Make the API call to your proxy server
             try {
                 const response = await axios.post('https://your-proxy-server-url.com/update-metadata', {
@@ -18,8 +21,8 @@ export default function Button({ metadata, buttonLabel }) {
 
                 // Check for a successful response
                 if (response.status === 200) {
-                    // Navigate to the change page and pass the metadata
-                    navigate('/modify', { state: { metadata } });
+                    // Navigate to the home page
+                    navigate('/');
                 } else {
                     console.error('Error updating token metadata:', response);
                 }
@@ -31,6 +34,7 @@ export default function Button({ metadata, buttonLabel }) {
             navigate('/modify');
         }
     };
+
 
     return (
         <button onClick={handleClick}>{buttonLabel}</button>
