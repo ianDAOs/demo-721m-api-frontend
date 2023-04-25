@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { updateMetadata } from '../services/postApiService';
 
 export default function Button({ metadata, buttonLabel }) {
 
@@ -14,7 +14,7 @@ export default function Button({ metadata, buttonLabel }) {
 
             // Make the API call to your proxy server
             try {
-                const response = await axios.post('https://m-demo-384522.uc.r.appspot.com/update-metadata', metadata);
+                const response = await updateMetadata(metadata);
 
                 // Check for a successful response
                 if (response.status === 200) {
