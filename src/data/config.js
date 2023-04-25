@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://m-demo-384522.uc.r.appspot.com';

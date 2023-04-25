@@ -3,7 +3,7 @@ import Title from './Title';
 import Nft from './Nft';
 import Metadata from './Metadata';
 import Button from './Button';
-import { fetchMetadata } from '../services/getApiService';
+import { fetchMetadata } from '../services/fetchMetadataService';
 
 export default function Main({ buttonLabel }) {
 
@@ -25,7 +25,7 @@ export default function Main({ buttonLabel }) {
     return (
         <div>
             <Title metadata={metadata} />
-            <Nft />
+            <Nft metadata={metadata} />
             <Metadata metadata={metadata} />
             <Button metadata={metadata} buttonLabel={buttonLabel} />
         </div>
