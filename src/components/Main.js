@@ -3,6 +3,7 @@ import Title from './Title';
 import Nft from './Nft';
 import Metadata from './Metadata';
 import Button from './Button';
+import { fetchMetadata } from '../services/getApiService';
 
 export default function Main({ buttonLabel }) {
 
@@ -12,8 +13,7 @@ export default function Main({ buttonLabel }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://m-demo-384522.uc.r.appspot.com/get-metadata');
-                const data = await response.json();
+                const data = await fetchMetadata();
                 setMetadata(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
