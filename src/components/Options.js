@@ -1,17 +1,16 @@
 // Options.js
 import React, { useState, useEffect } from 'react';
 import Selector from './Selector';
+import { styles, colors } from '../data/optionsData';
 
 export default function Options({ metadata, setMetadata }) {
 
-    const styles = ['Low-rise sneaker', 'Basketball shoe', 'Running shoe'];
+    // useState React hooks for style and color
     const [currentStyle, setCurrentStyle] = useState(metadata.style);
-
-    const colors = ['White', 'Black', 'Multicolor'];
     const [currentColor, setCurrentColor] = useState(metadata.color);
 
     useEffect(() => {
-        // Preserve other metadata fields/values when updating the state
+        // Preserve other metadata fields and values when updating the style and color
         setMetadata(prevMetadata => ({ ...prevMetadata, style: currentStyle, color: currentColor }));
     }, [currentStyle, currentColor, setMetadata]);
 
