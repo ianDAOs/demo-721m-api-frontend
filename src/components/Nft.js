@@ -7,8 +7,8 @@ export default function Nft({ metadata }) {
     }
 
     // Get the style and color attributes
-    const styleAttribute = metadata.attributes.find(attr => attr.trait_type === 'Style');
-    const colorAttribute = metadata.attributes.find(attr => attr.trait_type === 'Color');
+    const styleAttribute = metadata.attributes && metadata.attributes.find(attr => attr.trait_type === 'Style');
+    const colorAttribute = metadata.attributes && metadata.attributes.find(attr => attr.trait_type === 'Color');
     const style = styleAttribute ? styleAttribute.value : '';
     const color = colorAttribute ? colorAttribute.value : '';
 

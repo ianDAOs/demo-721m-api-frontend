@@ -11,37 +11,39 @@ export default function Metadata({ metadata }) {
                 tokenId: "1",
                 {'}'}
             </p>
-            <p>
-                Metadata
-                {'{'}
-                "description":"{metadata.description}",
-                "image":"{metadata.image}",
-                "updated":"{metadata.updated}",
-                "attributes": [
-                {metadata.attributes.map((attr, index) => (
-                    <React.Fragment key={index}>
-                        <span>
-                            {"{"}
-                            "trait_type": "{attr.trait_type}",
-                            "value": {JSON.stringify(attr.value)},
-                            {attr.display_type && (
-                                <>
-                                    "display_type": "{attr.display_type}",
-                                </>
-                            )}
-                            {attr.max_value && (
-                                <>
-                                    "max_value": {attr.max_value},
-                                </>
-                            )}
-                            {"}"}
-                        </span>
-                        {index !== metadata.attributes.length - 1 && <>, </>}
-                    </React.Fragment>
-                ))}
-                ]
-                {'}'}
-            </p>
+            {metadata && (
+                <p>
+                    Metadata
+                    {'{'}
+                    "description":"{metadata.description}",
+                    "image":"{metadata.image}",
+                    "updated":"{metadata.updated}",
+                    "attributes": [
+                    {metadata.attributes && metadata.attributes.map((attr, index) => (
+                        <React.Fragment key={index}>
+                            <span>
+                                {"{"}
+                                "trait_type": "{attr.trait_type}",
+                                "value": {JSON.stringify(attr.value)},
+                                {attr.display_type && (
+                                    <>
+                                        "display_type": "{attr.display_type}",
+                                    </>
+                                )}
+                                {attr.max_value && (
+                                    <>
+                                        "max_value": {attr.max_value},
+                                    </>
+                                )}
+                                {"}"}
+                            </span>
+                            {index !== metadata.attributes.length - 1 && <>, </>}
+                        </React.Fragment>
+                    ))}
+                    ]
+                    {'}'}
+                </p>
+            )}
         </div>
     );
 }

@@ -5,8 +5,8 @@ import { styles, colors } from '../data/optionsData';
 export default function Options({ metadata, setMetadata }) {
 
     // Get the initial style and color attributes
-    const styleAttribute = metadata.attributes.find(attr => attr.trait_type === 'Style');
-    const colorAttribute = metadata.attributes.find(attr => attr.trait_type === 'Color');
+    const styleAttribute = metadata.attributes && metadata.attributes.find(attr => attr.trait_type === 'Style');
+    const colorAttribute = metadata.attributes && metadata.attributes.find(attr => attr.trait_type === 'Color');
     const initialStyle = styleAttribute ? styleAttribute.value : '';
     const initialColor = colorAttribute ? colorAttribute.value : '';
 

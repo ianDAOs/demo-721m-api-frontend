@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Title({ metadata }) {
 
-    if (!metadata) {
+    if (!metadata || !metadata.attributes) {
         return <p>Loading...</p>;
     }
 
