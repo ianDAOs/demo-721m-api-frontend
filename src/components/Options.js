@@ -4,10 +4,6 @@ import { styles, colors } from '../data/optionsData';
 
 export default function Options({ metadata, setMetadata }) {
 
-    if (!metadata) {
-        return <p>Loading...</p>;
-    }
-
     // Get the initial style and color attributes
     const styleAttribute = metadata.attributes.find(attr => attr.trait_type === 'Style');
     const colorAttribute = metadata.attributes.find(attr => attr.trait_type === 'Color');
