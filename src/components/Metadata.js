@@ -15,7 +15,7 @@ export default function Metadata({ metadata }) {
                 Metadata
                 {'{'}
                 "product":"{metadata.product}",
-                "image":"TBD",
+                "image":{metadata.image},
                 "style":"{metadata.style}",
                 "color":"{metadata.color}",
                 "badge":"{metadata.badge}",
