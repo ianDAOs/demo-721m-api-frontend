@@ -1,6 +1,11 @@
 import React from 'react';
 
 export default function Title({ metadata }) {
+
+    if (!metadata) {
+        return <p>Loading...</p>;
+    }
+
     // Get the required attributes
     const productAttribute = metadata.attributes.find(attr => attr.trait_type === 'description');
     const badgeAttribute = metadata.attributes.find(attr => attr.trait_type === 'Badge');

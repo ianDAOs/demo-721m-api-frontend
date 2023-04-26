@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function Nft({ metadata }) {
+
     if (!metadata) {
         return <p>Loading...</p>;
     }
