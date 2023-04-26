@@ -5,10 +5,16 @@ export default function Nft({ metadata }) {
         return <p>Loading...</p>;
     }
 
+    // Get the style and color attributes
+    const styleAttribute = metadata.attributes.find(attr => attr.trait_type === 'Style');
+    const colorAttribute = metadata.attributes.find(attr => attr.trait_type === 'Color');
+    const style = styleAttribute ? styleAttribute.value : '';
+    const color = colorAttribute ? colorAttribute.value : '';
+
     return (
         <div>
             {metadata.image ? (
-                <img src={metadata.image} alt={`${metadata.color} ${metadata.style}`} />
+                <img src={metadata.image} alt={`${color} ${style}`} />
             ) : (
                 <p>No image available</p>
             )}

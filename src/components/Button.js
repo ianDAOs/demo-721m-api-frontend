@@ -4,17 +4,23 @@ import { updateMetadata } from '../services/updateMetadataService';
 import { uploadImage } from '../services/uploadImageService';
 
 export default function Button({ metadata, buttonLabel }) {
+
     const navigate = useNavigate();
 
     // Handle the click event, make the API call, then navigate to the change page
     const handleClick = async () => {
+
         if (buttonLabel === 'Submit') {
             // Navigate to the loading page
             navigate('/loading');
 
             // Upload the image
             try {
-                const uploadResponse = await uploadImage(metadata.style, metadata.color);
+
+                const style = metadata.attributes.find(attr => attr.trait_type === "Style").value;
+                const color = metadata.attributes.find(attr => attr.trait_type === "Color").value;
+                const uploadResponse = await uploadImage(style, color);
+
                 const ipfsHash = uploadResponse.data.ipfsHash;
 
                 // Generate the full image URL with the IPFS hash

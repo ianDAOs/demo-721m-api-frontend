@@ -1,17 +1,31 @@
-// Options.js
 import React, { useState, useEffect } from 'react';
 import Selector from './Selector';
 import { styles, colors } from '../data/optionsData';
 
 export default function Options({ metadata, setMetadata }) {
+    // Get the initial style and color attributes
+    const styleAttribute = metadata.attributes.find(attr => attr.trait_type === 'Style');
+    const colorAttribute = metadata.attributes.find(attr => attr.trait_type === 'Color');
+    const initialStyle = styleAttribute ? styleAttribute.value : '';
+    const initialColor = colorAttribute ? colorAttribute.value : '';
 
     // useState React hooks for style and color
-    const [currentStyle, setCurrentStyle] = useState(metadata.style);
-    const [currentColor, setCurrentColor] = useState(metadata.color);
+    const [currentStyle, setCurrentStyle] = useState(initialStyle);
+    const [currentColor, setCurrentColor] = useState(initialColor);
 
     useEffect(() => {
-        // Preserve other metadata fields and values when updating the style and color
-        setMetadata(prevMetadata => ({ ...prevMetadata, style: currentStyle, color: currentColor }));
+        // Update the style and color attributes while preserving other metadata fields and values
+        setMetadata(prevMetadata => ({
+            ...prevMetadata,
+            attributes: prevMetadata.attributes.map(attr => {
+                if (attr.trait_type === 'Style') {
+                    return { ...attr, value: currentStyle };
+                } else if (attr.trait_type === 'Color') {
+                    return { ...attr, value: currentColor };
+                }
+                return attr;
+            }),
+        }));
     }, [currentStyle, currentColor, setMetadata]);
 
     return (
@@ -30,5 +44,4 @@ export default function Options({ metadata, setMetadata }) {
             />
         </div>
     );
-
 }
