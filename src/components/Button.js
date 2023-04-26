@@ -17,8 +17,10 @@ export default function Button({ metadata, buttonLabel }) {
                 const uploadResponse = await uploadImage(metadata.style, metadata.color);
                 const ipfsHash = uploadResponse.data.ipfsHash;
 
+                const imageUrl = ipfsHash;
+
                 // Generate the full image URL with the IPFS hash
-                const imageUrl = `https://cloudflare-ipfs.com/ipfs/${ipfsHash}`;
+                // const imageUrl = `https://cloudflare-ipfs.com/ipfs/${ipfsHash}`;
 
                 // Update the metadata with the new image URL
                 const updatedMetadata = { ...metadata, image: imageUrl };

@@ -5,10 +5,12 @@ export default function Nft({ metadata }) {
         return <p>Loading...</p>;
     }
 
+    const imgUrl = `https://cloudflare-ipfs.com/ipfs/${metadata.image}`;
+
     return (
         <div>
             {metadata.image ? (
-                <img src={metadata.image} alt={`${metadata.color} ${metadata.style}`} />
+                <img src={imgUrl} alt={`${metadata.color} ${metadata.style}`} />
             ) : (
                 <p>No image available</p>
             )}
