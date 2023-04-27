@@ -1,5 +1,5 @@
 import React from 'react';
-import { findAttribute } from '../helpers/findAttribute';
+import { contractAddress, tokenId } from '../data/contractData';
 
 export default function Nft({ metadata }) {
 
@@ -7,18 +7,17 @@ export default function Nft({ metadata }) {
         return <p>Loading...</p>;
     }
 
-    // Get the style and color attributes
-    const style = findAttribute(metadata.attributes, 'Style');
-    const color = findAttribute(metadata.attributes, 'Color');
+    const osUrl = `https://opensea.io/assets/ethereum/${contractAddress}/${tokenId}`;
+    const ipfsUrl = `https://cloudflare-ipfs.com/ipfs/${metadata.image}`;
 
     return (
         <div>
             {metadata.image ? (
-                <img src={metadata.image} alt={`${color} ${style}`} />
+                <img src={metadata.image} alt="NFT visual" />
             ) : (
                 <p>No image available</p>
             )}
-            <p>View on <a href='https://opensea.io/assets/ethereum/0xca206cc53e533838f9edc4c25605ec475f0bbcef/1'>Opensea</a> IPFS</p>
+            <p>View on <a href={osUrl}>Opensea</a> <a href={ipfsUrl}>IPFS</a></p>
             <p>Note: Updates may take time to appear on other platforms</p>
         </div>
     );
