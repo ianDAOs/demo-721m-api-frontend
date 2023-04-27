@@ -8,7 +8,6 @@ export default function Nft({ metadata }) {
     }
 
     const osUrl = `https://opensea.io/assets/ethereum/${contractAddress}/${tokenId}`;
-    const ipfsUrl = `https://cloudflare-ipfs.com/ipfs/${metadata.image}`;
 
     return (
         <div>
@@ -17,7 +16,7 @@ export default function Nft({ metadata }) {
             ) : (
                 <p>No image available</p>
             )}
-            <p>View on <a href={osUrl}>Opensea</a> <a href={ipfsUrl}>IPFS</a></p>
+            <p>View on <a href={osUrl}>Opensea</a> <a href={metadata.image}>IPFS</a></p>
             <p>Note: Updates may take time to appear on other platforms</p>
         </div>
     );
