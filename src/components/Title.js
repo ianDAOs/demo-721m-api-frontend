@@ -1,4 +1,5 @@
 import React from 'react';
+import { findAttribute } from '../helpers/findAttribute';
 
 export default function Title({ metadata }) {
 
@@ -7,16 +8,10 @@ export default function Title({ metadata }) {
     }
 
     // Get the required attributes
-    const productAttribute = metadata.attributes.find(attr => attr.trait_type === 'description');
-    const badgeAttribute = metadata.attributes.find(attr => attr.trait_type === 'Badge');
-    const levelAttribute = metadata.attributes.find(attr => attr.trait_type === 'Level');
-    const xpAttribute = metadata.attributes.find(attr => attr.trait_type === 'XP');
-
-    // Get the attribute values
-    const product = productAttribute ? productAttribute.value : '';
-    const badge = badgeAttribute ? badgeAttribute.value : '';
-    const level = levelAttribute ? levelAttribute.value : '';
-    const xp = xpAttribute ? xpAttribute.value : '';
+    const product = findAttribute(metadata.attributes, 'description');
+    const badge = findAttribute(metadata.attributes, 'Badge');
+    const level = findAttribute(metadata.attributes, 'Level');
+    const xp = findAttribute(metadata.attributes, 'XP');
 
     return (
         <div>

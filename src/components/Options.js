@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Selector from './Selector';
 import { styles, colors } from '../data/optionsData';
+import { findAttribute } from '../helpers/findAttribute';
 
 export default function Options({ metadata, setMetadata }) {
 
     // Get the initial style and color attributes
-    const styleAttribute = metadata.attributes && metadata.attributes.find(attr => attr.trait_type === 'Style');
-    const colorAttribute = metadata.attributes && metadata.attributes.find(attr => attr.trait_type === 'Color');
-    const initialStyle = styleAttribute ? styleAttribute.value : '';
-    const initialColor = colorAttribute ? colorAttribute.value : '';
+    const initialStyle = metadata ? findAttribute(metadata.attributes, 'Style') : '';
+    const initialColor = metadata ? findAttribute(metadata.attributes, 'Color') : '';
+
 
     // useState React hooks for style and color
     const [currentStyle, setCurrentStyle] = useState(initialStyle);

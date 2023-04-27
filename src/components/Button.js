@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { updateMetadata } from '../services/updateMetadataService';
 import { uploadImage } from '../services/uploadImageService';
+import { findAttribute } from '../helpers/findAttribute';
 
 export default function Button({ metadata, buttonLabel }) {
 
@@ -19,8 +20,9 @@ export default function Button({ metadata, buttonLabel }) {
                 // Upload the image
                 try {
 
-                    const style = metadata.attributes.find(attr => attr.trait_type === "Style").value;
-                    const color = metadata.attributes.find(attr => attr.trait_type === "Color").value;
+                    const style = findAttribute(metadata.attributes, "Style");
+                    const color = findAttribute(metadata.attributes, "Color");
+
                     const uploadResponse = await uploadImage(style, color);
 
                     const ipfsHash = uploadResponse.data.ipfsHash;

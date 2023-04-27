@@ -1,4 +1,5 @@
 import React from 'react';
+import { findAttribute } from '../helpers/findAttribute';
 
 export default function Nft({ metadata }) {
 
@@ -7,10 +8,8 @@ export default function Nft({ metadata }) {
     }
 
     // Get the style and color attributes
-    const styleAttribute = metadata.attributes && metadata.attributes.find(attr => attr.trait_type === 'Style');
-    const colorAttribute = metadata.attributes && metadata.attributes.find(attr => attr.trait_type === 'Color');
-    const style = styleAttribute ? styleAttribute.value : '';
-    const color = colorAttribute ? colorAttribute.value : '';
+    const style = findAttribute(metadata.attributes, 'Style');
+    const color = findAttribute(metadata.attributes, 'Color');
 
     return (
         <div>
