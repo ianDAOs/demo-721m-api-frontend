@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Dialog } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-    { name: 'Retail', href: '#' },
-    { name: 'Gaming', href: '#' },
-]
+    { name: 'Retail', to: '/' },
+    { name: 'Gaming', to: '/' },
+];
 
 export default function Header() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
         <header className="bg-black">
@@ -19,9 +20,9 @@ export default function Header() {
 
                     <div className="hidden sm:flex gap-x-16">
                         {navigation.map((item) => (
-                            <a key={item.name} href={item.href} className="text-sm font-extralight leading-6 text-gray-400 hover:text-white">
+                            <Link key={item.name} to={item.to} className="text-sm font-extralight leading-6 text-gray-400 hover:text-white">
                                 {item.name}
-                            </a>
+                            </Link>
                         ))}
                     </div>
 
@@ -39,9 +40,9 @@ export default function Header() {
                 </div>
 
                 <div className="hidden sm:flex">
-                    <a href="#" className="text-sm font-extralight leading-6 text-gray-400 hover:text-white">
+                    <Link to="/about" className="text-sm font-extralight leading-6 text-gray-400 hover:text-white">
                         Learn More
-                    </a>
+                    </Link>
                 </div>
 
             </nav>
@@ -64,22 +65,22 @@ export default function Header() {
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6">
                                 {navigation.map((item) => (
-                                    <a
+                                    <Link
                                         key={item.name}
-                                        href={item.href}
+                                        to={item.to}
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-extralight leading-7 text-gray-200 hover:bg-gray-50 hover:text-black"
                                     >
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                             <div className="py-6">
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/about"
                                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-extralight leading-7 text-gray-400 hover:bg-gray-50 hover:text-black"
                                 >
                                     Learn More
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
