@@ -4,7 +4,12 @@ import { findAttribute } from '../helpers/findAttribute';
 export default function Title({ metadata }) {
 
     if (!metadata || !metadata.attributes) {
-        return <p>Loading...</p>;
+        return (
+            <div>
+                <h1 className="text-center text-4xl font-thin pt-8 pb-2">Loading...</h1>
+                <p className="text-center text-md font-thin pb-12">Loading...</p>
+            </div>
+        );
     }
 
     // Get the required attributes
@@ -15,8 +20,8 @@ export default function Title({ metadata }) {
 
     return (
         <div>
-            <h1>{product}</h1>
-            <p>{badge} L{level} XP{xp}</p>
+            <h1 className="text-center text-4xl font-thin pt-8 pb-2">{product}</h1>
+            <p className="text-center pb-12">{badge} L{level} XP{xp}</p>
         </div>
     );
 }
