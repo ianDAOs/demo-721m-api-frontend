@@ -13,14 +13,13 @@ export default function Title({ metadata }) {
     }
 
     // Get the required attributes
-    const product = findAttribute(metadata.attributes, 'description');
     const badge = findAttribute(metadata.attributes, 'Badge');
     const level = findAttribute(metadata.attributes, 'Level');
     const xp = findAttribute(metadata.attributes, 'XP');
 
     return (
         <div>
-            <h1 className="text-center text-4xl font-thin text-white pt-8 pb-2">{product}</h1>
+            <h1 className="text-center text-4xl font-thin text-white pt-8 pb-2">{metadata.description}</h1>
             <p className="text-center pb-12">{badge} L{level} XP{xp}</p>
         </div>
     );

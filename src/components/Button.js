@@ -23,6 +23,8 @@ export default function Button({ metadata, buttonLabel }) {
                     const style = findAttribute(metadata.attributes, "Style");
                     const color = findAttribute(metadata.attributes, "Color");
 
+                    const productDescription = `${color} ${style}`;
+
                     const uploadResponse = await uploadImage(style, color);
 
                     const ipfsHash = uploadResponse.data.ipfsHash;
@@ -31,7 +33,7 @@ export default function Button({ metadata, buttonLabel }) {
                     const imageUrl = `https://cloudflare-ipfs.com/ipfs/${ipfsHash}`;
 
                     // Update the metadata with the new image URL
-                    const updatedMetadata = { ...metadata, image: imageUrl };
+                    const updatedMetadata = { ...metadata, description: productDescription, image: imageUrl };
                     const updateResponse = await updateMetadata(updatedMetadata);
 
                     // Check for a successful response
