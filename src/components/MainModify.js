@@ -11,7 +11,7 @@ export default function MainModify({ metadata: initialMetadata, buttonLabel }) {
     return (
         <div>
             <Title metadata={metadata} />
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2">
                 <div>
                     <Nft metadata={metadata} />
                 </div>
