@@ -6,13 +6,15 @@ import Loading from './pages/Loading';
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/modify" element={<Modify />} />
-        <Route path="/loading" element={<Loading />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </Router>
+    <div className="bg-black h-screen w-screen text-white">
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/modify" element={<Modify />} />
+          <Route path="/loading" element={<Loading />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }

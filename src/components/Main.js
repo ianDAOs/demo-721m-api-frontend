@@ -25,9 +25,16 @@ export default function Main({ buttonLabel }) {
     return (
         <div>
             <Title metadata={metadata} />
-            <Nft metadata={metadata} />
-            <Metadata metadata={metadata} />
-            <Button metadata={metadata} buttonLabel={buttonLabel} />
+            <div className="grid grid-cols-2">
+                <div>
+                    <Nft metadata={metadata} />
+                </div>
+                <div>
+                    <Metadata metadata={metadata} />
+                    <Button metadata={metadata} buttonLabel={buttonLabel} />
+                </div>
+            </div>
+
         </div>
     );
 }

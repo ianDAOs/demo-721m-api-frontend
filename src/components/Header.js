@@ -5,7 +5,6 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
     { name: 'Retail', to: '/' },
-    { name: 'Gaming', to: '/' },
 ];
 
 export default function Header() {

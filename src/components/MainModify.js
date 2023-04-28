@@ -11,9 +11,15 @@ export default function MainModify({ metadata: initialMetadata, buttonLabel }) {
     return (
         <div>
             <Title metadata={metadata} />
-            <Nft metadata={metadata} />
-            <Options metadata={metadata} setMetadata={setMetadata} />
-            <Button metadata={metadata} buttonLabel={buttonLabel} />
+            <div className="grid grid-cols-2">
+                <div>
+                    <Nft metadata={metadata} />
+                </div>
+                <div>
+                    <Options metadata={metadata} setMetadata={setMetadata} />
+                    <Button metadata={metadata} buttonLabel={buttonLabel} />
+                </div>
+            </div>
         </div>
     );
 
