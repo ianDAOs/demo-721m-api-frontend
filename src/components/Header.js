@@ -5,6 +5,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
     { name: 'Retail', to: '/' },
+    { name: 'Test', to: '/' },
 ];
 
 export default function Header() {
@@ -15,11 +16,11 @@ export default function Header() {
 
             <nav className="mx-auto flex items-center justify-between p-8 px-12" aria-label="Global">
 
-                <div className="flex items-center gap-x-10">
+                <div className="flex">
 
                     <div className="hidden sm:flex gap-x-16">
                         {navigation.map((item) => (
-                            <Link key={item.name} to={item.to} className="text-sm font-extralight leading-6 text-gray-400 hover:text-white">
+                            <Link key={item.name} to={item.to} className="text-sm font-extralight text-gray-400 hover:text-white">
                                 {item.name}
                             </Link>
                         ))}
