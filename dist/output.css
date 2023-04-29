@@ -892,6 +892,10 @@ video {
   border-color: rgb(107 114 128 / 0.1);
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
 }

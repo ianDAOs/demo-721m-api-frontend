@@ -6,7 +6,7 @@ import Loading from './pages/Loading';
 
 export default function App() {
   return (
-    <div className="bg-black">
+    <div className="bg-black overflow-hidden">
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
