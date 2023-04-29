@@ -3,7 +3,7 @@ import { chainId, contractAddress, tokenId } from '../data/contractData';
 
 export default function Metadata({ metadata }) {
     return (
-        <div>
+        <div className='text-white'>
             <p>
                 Token
                 {'{'}
