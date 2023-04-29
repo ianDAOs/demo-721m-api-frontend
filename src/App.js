@@ -6,7 +6,7 @@ import Loading from './pages/Loading';
 
 export default function App() {
   return (
-    <div className="container mx-auto bg-black h-screen w-screen text-white">
+    <div className="mx-auto bg-black h-screen w-screen text-white">
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
