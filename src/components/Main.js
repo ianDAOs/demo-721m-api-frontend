@@ -25,7 +25,7 @@ export default function Main({ buttonLabel }) {
     return (
         <div>
             <Title metadata={metadata} />
-            <div className="mx-auto grid grid-cols-1 md:grid-cols-2">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2">
                 <div>
                     <Nft metadata={metadata} />
                 </div>
