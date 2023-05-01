@@ -25,7 +25,7 @@ export default function Main({ buttonLabel }) {
     return (
         <div>
             <Title metadata={metadata} />
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 justify-between px-14">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 justify-stretch">
                 <div>
                     <Nft metadata={metadata} />
                 </div>
