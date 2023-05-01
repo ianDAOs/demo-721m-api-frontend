@@ -11,14 +11,16 @@ export default function Nft({ metadata }) {
     const osUrl = `https://opensea.io/assets/ethereum/${contractAddress}/${tokenId}`;
 
     return (
-        <div>
-            {metadata.image ? (
-                <img src={metadata.image} alt='NFT visual' />
-            ) : (
-                <img src={loadingImage} alt='NFT loading visual' />
-            )}
-            <p>View on <a href={osUrl}>Opensea</a> <a href={metadata.image}>IPFS</a></p>
-            <p>Note: Updates may take time to appear on other platforms</p>
+        <div className='flex md:justify-end sm:justify-center text-white'>
+            <div>
+                {metadata.image ? (
+                    <img src={metadata.image} className='md:pl-6 sm:pl-0' alt='NFT visual' />
+                ) : (
+                    <img src={loadingImage} className='md:pl-6 sm:pl-0' alt='NFT loading visual' />
+                )}
+                <p className='text-center pt-6 text-sm font-extralight'>View on <a href={osUrl} className='text-cyan-400'>Opensea</a> and <a href={metadata.image} className='text-cyan-400'>IPFS</a></p>
+                <p className='text-center pt-4 pb-8 text-xs font-thin text-stone-400'>Note: Updates may take time to appear on other platforms</p>
+            </div>
         </div>
     );
 }

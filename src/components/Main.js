@@ -25,11 +25,11 @@ export default function Main({ buttonLabel }) {
     return (
         <div>
             <Title metadata={metadata} />
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 justify-stretch">
+            <div className='mx-auto grid grid-cols-1 md:grid-cols-2 justify-stretch'>
                 <div>
                     <Nft metadata={metadata} />
                 </div>
-                <div>
+                <div className='px-6 whitespace-normal overflow-wrap break-all'>
                     <Metadata metadata={metadata} />
                     <Button metadata={metadata} buttonLabel={buttonLabel} />
                 </div>
