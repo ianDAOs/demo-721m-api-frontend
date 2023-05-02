@@ -57,7 +57,7 @@ export default function Button({ metadata, buttonLabel }) {
 
     return (
         <div className='flex justify-center md:justify-start pt-8'>
-            <button onClick={handleClick} className='block rounded-2xl w-80 py-3 bg-emerald-500 hover:bg-emerald-200 text-white text-lg font-light'>{buttonLabel}</button>
+            <button onClick={handleClick} className='block rounded-2xl w-80 py-3 bg-emerald-500 hover:bg-emerald-200 text-white text-md font-light'>{buttonLabel}</button>
         </div>
     );
 }
