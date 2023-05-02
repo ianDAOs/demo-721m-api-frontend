@@ -1834,6 +1834,10 @@ video {
   outline-color: #818cf8;
 }
 
+.outline-emerald-500 {
+  outline-color: #10b981;
+}
+
 .hover\:bg-gray-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
