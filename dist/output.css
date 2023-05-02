@@ -1854,6 +1854,22 @@ video {
   outline-color: #d6d3d1;
 }
 
+.outline-stone-400\/50 {
+  outline-color: rgb(168 162 158 / 0.5);
+}
+
+.outline-stone-800 {
+  outline-color: #292524;
+}
+
+.outline-stone-700 {
+  outline-color: #44403c;
+}
+
+.outline-stone-600 {
+  outline-color: #57534e;
+}
+
 .hover\:bg-gray-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
