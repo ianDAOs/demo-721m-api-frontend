@@ -18,8 +18,8 @@ export default function Nft({ metadata }) {
                 ) : (
                     <img src={loadingImage} className='md:pl-6 sm:pl-0' alt='NFT loading visual' />
                 )}
-                <p className='text-center pt-6 text-sm font-extralight'>View on <a href={osUrl} className='text-cyan-400'>Opensea</a> and <a href={metadata.image} className='text-cyan-400'>IPFS</a></p>
-                <p className='text-center pt-4 pb-8 text-xs font-thin text-stone-400'>Note: Updates may take time to appear on other platforms</p>
+                <p className='text-center pt-6 text-sm font-extralight'>View on <a href={osUrl} className='text-sky-400'>Opensea</a> and <a href={metadata.image} className='text-sky-400'>IPFS</a></p>
+                <p className='text-center pt-4 pb-8 text-sm font-extralight text-stone-400'>Note: Updates may take time to appear on other platforms</p>
             </div>
         </div>
     );
