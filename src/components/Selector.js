@@ -12,9 +12,9 @@ export default function Selector({ label, options, currentOption, setCurrentOpti
 
     return (
         <div className='grid grid-rows-3 justify-center md:justify-start pt-8 pb-4'>
-            <SelectorButton buttonLabel="Prev" onClick={() => handleOptionChange(-1)} />
+            <SelectorButton buttonLabel="Prev" onClick={() => handleOptionChange(-1)} className='justify-center md:justify-start' />
             <p className='py-1 text-lg text-white font-mono font-light '>{label}: {currentOption}</p>
-            <SelectorButton buttonLabel="Next" onClick={() => handleOptionChange(1)} />
+            <SelectorButton buttonLabel="Next" onClick={() => handleOptionChange(1)} className='justify-center md:justify-start' />
         </div>
     );
 }
