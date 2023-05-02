@@ -66,7 +66,7 @@ export default function Metadata({ metadata }) {
                                 <div className='pl-4'>
                                     <span className='text-violet-200'>"value"</span>
                                     <span>: </span>
-                                    <span className='text-rose-300'>{JSON.stringify(attr.value)}</span>
+                                    <span className={typeof attr.value === 'number' ? 'text-rose-400' : 'text-emerald-300'}>{JSON.stringify(attr.value)}</span>
                                     <span>,</span>
                                 </div>
                                 {attr.display_type && (
