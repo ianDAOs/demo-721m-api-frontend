@@ -752,6 +752,10 @@ video {
   height: 100vh;
 }
 
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -943,6 +947,10 @@ video {
 
 .divide-gray-500\/10 > :not([hidden]) ~ :not([hidden]) {
   border-color: rgb(107 114 128 / 0.1);
+}
+
+.self-center {
+  align-self: center;
 }
 
 .overflow-auto {
@@ -1532,6 +1540,10 @@ video {
 
 .pt-0 {
   padding-top: 0px;
+}
+
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .text-center {

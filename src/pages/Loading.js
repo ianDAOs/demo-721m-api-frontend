@@ -9,7 +9,8 @@ const steps = [
     'Updating token metadata...',
     'Uploading image...',
     'Mirroring image to IPFS...',
-    'Fetching metadata...'
+    'Fetching metadata...',
+    'Finalizing...'
 ];
 
 export default function Loading() {
@@ -34,9 +35,11 @@ export default function Loading() {
     }, [currentStep, completedSteps]);
 
     return (
-        <div>
+        <div className='flex grid grid-rows-8 justify-items-center pt-20 text-white text-md font-thin'>
             {completedSteps.map((step, index) => (
-                <p key={index} className={styles.fadeIn}>{step}</p>
+                <div className='py-3'>
+                    <p key={index} className={styles.fadeIn}>{step}</p>
+                </div>
             ))}
         </div>
     );
