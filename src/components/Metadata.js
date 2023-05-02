@@ -3,7 +3,7 @@ import React from 'react';
 export default function Metadata({ metadata }) {
 
     return (
-        <div>
+        <div className='pt-8 md:pt-0'>
             <button className='rounded-full outline outline-1 outline-stone-600 px-4 py-2 text-xs font-thin text-white'>NFT Metadata - Live Data</button>
             <div className='pt-6 text-white text-xs font-mono font-light'>
                 {metadata && (

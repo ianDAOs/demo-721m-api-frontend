@@ -23,7 +23,7 @@ export default function Nft({ metadata }) {
                     <img src={loadingImage} className='md:pl-6 sm:pl-0' alt='NFT loading visual' />
                 )}
                 <p className='text-center pt-6 text-sm font-extralight'>View on <a href={osUrl} className='text-sky-400'>Opensea</a> . <a href={metadata.image} className='text-sky-400'>IPFS</a> . <a href={ES_URL} className='text-sky-400'>Etherscan</a></p>
-                <p className='text-center pt-2 pb-16 text-xs font-extralight text-stone-400'>Note: Updates may take time to appear on other platforms</p>
+                <p className='text-center pt-2 pb-8 md:pb-16 text-xs font-extralight text-stone-400'>Note: Updates may take time to appear on other platforms</p>
             </div>
         </div>
     );
