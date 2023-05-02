@@ -23,13 +23,13 @@ export default function Main({ buttonLabel }) {
     }, []);
 
     return (
-        <div>
+        <div className='overflow-auto'>
             <Title metadata={metadata} />
             <div className='mx-auto grid grid-cols-1 md:grid-cols-2 justify-stretch'>
                 <div>
                     <Nft metadata={metadata} />
                 </div>
-                <div className='md:pl-12 pl-6 md:pr-20 pr-6 whitespace-normal overflow-auto overflow-wrap break-all'>
+                <div className='md:pl-12 pl-6 md:pr-20 pr-6 whitespace-normal overflow-wrap break-all'>
                     <Metadata metadata={metadata} />
                     <Button metadata={metadata} buttonLabel={buttonLabel} />
                 </div>

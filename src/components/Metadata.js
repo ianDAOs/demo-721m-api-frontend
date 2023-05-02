@@ -5,32 +5,10 @@ export default function Metadata({ metadata }) {
 
     return (
         <div>
-            <button className='rounded-full outline outline-1 outline-stone-600 px-4 py-2 text-xs font-thin text-white'>NFT Configuration & Metadata - Live Data</button>
+            <button className='rounded-full outline outline-1 outline-stone-600 px-4 py-2 text-xs font-thin text-white'>NFT Metadata - Live Data</button>
             <div className='pt-6 text-white text-xs font-mono font-light'>
-                <div>
-                    <p>{'{'} </p>
-                    <div className='pl-4'>
-                        <span className=' text-violet-200'>"chainId"</span>
-                        <span>: </span>
-                        <span className='text-rose-400'>{chainId}</span>
-                        <span>,</span>
-                    </div>
-                    <div className='pl-4'>
-                        <span className='text-violet-200'>"contractAddress"</span>
-                        <span>: </span>
-                        <span className='text-emerald-300'>"{contractAddress}"</span>
-                        <span>,</span>
-                    </div>
-                    <div className='pl-4'>
-                        <span className='text-violet-200'>"tokenId"</span>
-                        <span>: </span>
-                        <span className='text-emerald-300'>"{tokenId}"</span>
-                        <span>,</span>
-                    </div>
-                    <p>{'}'} </p>
-                </div>
                 {metadata && (
-                    <div className='pt-8'>
+                    <div>
                         <p>{'{'} </p>
                         <div className='pl-4'>
                             <span className='text-violet-200'>"description"</span>
