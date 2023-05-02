@@ -13,7 +13,7 @@ export default function Selector({ label, options, currentOption, setCurrentOpti
     return (
         <div>
             <SelectorButton buttonLabel="Prev" onClick={() => handleOptionChange(-1)} />
-            <p>{label}: {currentOption}</p>
+            <p className='text-md text-white font-mono font-light'>{label}: {currentOption}</p>
             <SelectorButton buttonLabel="Next" onClick={() => handleOptionChange(1)} />
         </div>
     );
