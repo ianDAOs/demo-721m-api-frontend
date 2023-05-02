@@ -15,7 +15,7 @@ export default function Nft({ metadata }) {
         <div className='flex md:justify-end sm:justify-center text-white'>
             <div>
                 <div className='xl:pl-0 md:pl-6 sm:pl-0 pl-6 pb-2'>
-                    <button className='rounded-full outline outline-1 outline-emerald-500 px-4 py-2 text-xs font-thin text-white'>NFT Image</button>
+                    <button className='rounded-full outline outline-1 outline-stone-400 px-4 py-2 text-xs font-thin text-white'>NFT Image</button>
                 </div>
                 {metadata.image ? (
                     <img src={metadata.image} className='md:pl-6 sm:pl-0' alt='NFT visual' />

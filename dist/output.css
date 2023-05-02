@@ -1790,6 +1790,10 @@ video {
   outline-width: 0px;
 }
 
+.outline-4 {
+  outline-width: 4px;
+}
+
 .outline-offset-2 {
   outline-offset: 2px;
 }
@@ -1836,6 +1840,18 @@ video {
 
 .outline-emerald-500 {
   outline-color: #10b981;
+}
+
+.outline-stone-500 {
+  outline-color: #78716c;
+}
+
+.outline-stone-400 {
+  outline-color: #a8a29e;
+}
+
+.outline-stone-300 {
+  outline-color: #d6d3d1;
 }
 
 .hover\:bg-gray-800:hover {
