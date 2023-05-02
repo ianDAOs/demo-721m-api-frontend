@@ -49,7 +49,7 @@ export default function Button({ metadata, buttonLabel }) {
                     console.error('Error uploading image and updating token metadata:', error);
                 }
             }
-        } else if (buttonLabel === 'Modify NFT') {
+        } else if (buttonLabel === 'Click to Modify NFT') {
             // Navigate to the /modify route
             navigate('/modify', { state: { metadata } });
         }

@@ -11,11 +11,11 @@ export default function MainModify({ metadata: initialMetadata, buttonLabel }) {
     return (
         <div>
             <Title metadata={metadata} />
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2">
+            <div className='mx-auto grid grid-cols-1 md:grid-cols-2 justify-stretch'>
                 <div>
                     <Nft metadata={metadata} />
                 </div>
-                <div>
+                <div className='md:pl-12 pl-6 md:pr-20 pr-6 whitespace-normal overflow-wrap break-all'>
                     <Options metadata={metadata} setMetadata={setMetadata} />
                     <Button metadata={metadata} buttonLabel={buttonLabel} />
                 </div>
