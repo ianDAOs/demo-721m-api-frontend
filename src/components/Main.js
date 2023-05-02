@@ -29,7 +29,7 @@ export default function Main({ buttonLabel }) {
                 <div>
                     <Nft metadata={metadata} />
                 </div>
-                <div className='pl-10 pr-20 whitespace-normal overflow-wrap break-all'>
+                <div className='md:pl-12 pl-6 md:pr-20 pr-6 whitespace-normal overflow-wrap break-all'>
                     <Metadata metadata={metadata} />
                     <Button metadata={metadata} buttonLabel={buttonLabel} />
                 </div>

@@ -7,20 +7,20 @@ export default function Metadata({ metadata }) {
         <div className='text-white text-xs font-mono font-light'>
             <div>
                 <p>{'{'} </p>
-                <div>
-                    <span className='pl-4 text-sky-400'>"chainId"</span>
+                <div className='pl-4'>
+                    <span className=' text-sky-400'>"chainId"</span>
                     <span className='text-white'>: </span>
                     <span className='text-rose-400'>{chainId}</span>
                     <span className='text-white'>,</span>
                 </div>
-                <div>
-                    <span className='pl-4 text-sky-400'>"contractAddress"</span>
+                <div className='pl-4'>
+                    <span className='text-sky-400'>"contractAddress"</span>
                     <span className='text-white'>: </span>
                     <span className='text-emerald-300'>"{contractAddress}"</span>
                     <span className='text-white'>,</span>
                 </div>
-                <div>
-                    <span className='pl-4 text-sky-400'>"tokenId"</span>
+                <div className='pl-4'>
+                    <span className='text-sky-400'>"tokenId"</span>
                     <span className='text-white'>: </span>
                     <span className='text-emerald-300'>"{tokenId}"</span>
                     <span className='text-white'>,</span>
@@ -31,20 +31,20 @@ export default function Metadata({ metadata }) {
 
                 <div className='pt-8'>
                     <p>{'{'} </p>
-                    <div>
-                        <span className='pl-4 text-sky-400'>"description"</span>
+                    <div className='pl-4'>
+                        <span className='text-sky-400'>"description"</span>
                         <span className='text-white'>: </span>
                         <span className='text-emerald-300'>"{metadata.description}"</span>
                         <span className='text-white'>,</span>
                     </div>
-                    <div>
-                        <span className='pl-4 text-sky-400'>"image"</span>
+                    <div className='pl-4'>
+                        <span className='text-sky-400'>"image"</span>
                         <span className='text-white'>: </span>
                         <span className='text-emerald-300'>"{metadata.image}"</span>
                         <span className='text-white'>,</span>
                     </div>
-                    <div>
-                        <span className='pl-4 text-sky-400'>"updated"</span>
+                    <div className='pl-4'>
+                        <span className='text-sky-400'>"updated"</span>
                         <span className='text-white'>: </span>
                         <span className='text-emerald-300'>"{metadata.updated}"</span>
                         <span className='text-white'>,</span>
