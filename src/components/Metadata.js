@@ -1,5 +1,4 @@
 import React from 'react';
-import { chainId, contractAddress, tokenId } from '../data/contractData';
 
 export default function Metadata({ metadata }) {
 
