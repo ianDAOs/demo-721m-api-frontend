@@ -11,7 +11,7 @@ export default function Button({ metadata, buttonLabel }) {
     // Handle the click event, make the API call, then navigate to the change page
     const handleClick = async () => {
 
-        if (buttonLabel === 'Submit') {
+        if (buttonLabel === 'Submit Changes') {
             // Navigate to the loading page
             navigate('/loading');
 
