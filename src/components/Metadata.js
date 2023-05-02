@@ -28,7 +28,6 @@ export default function Metadata({ metadata }) {
                 <p>{'}'} </p>
             </div>
             {metadata && (
-
                 <div className='pt-8'>
                     <p>{'{'} </p>
                     <div className='pl-4'>
@@ -56,7 +55,7 @@ export default function Metadata({ metadata }) {
                     </div>
                     {metadata.attributes && metadata.attributes.map((attr, index) => (
                         <React.Fragment key={index}>
-                            <span className='pl-4'>
+                            <div className='pl-8'>
                                 {"{"}
                                 <div className='pl-4'>
                                     <span className='text-violet-200'>"trait_type"</span>
@@ -91,7 +90,7 @@ export default function Metadata({ metadata }) {
                                     </>
                                 )}
                                 {"}"}
-                            </span>
+                            </div>
                             {index !== metadata.attributes.length - 1 && <>, </>}
                         </React.Fragment>
                     ))}
