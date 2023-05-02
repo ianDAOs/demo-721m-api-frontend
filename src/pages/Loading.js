@@ -9,8 +9,7 @@ const steps = [
     'Updating token metadata...',
     'Uploading image...',
     'Mirroring image to IPFS...',
-    'Fetching metadata...',
-    'Finalizing...'
+    'Fetching metadata...'
 ];
 
 export default function Loading() {
