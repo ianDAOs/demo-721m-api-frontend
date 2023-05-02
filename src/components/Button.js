@@ -57,7 +57,7 @@ export default function Button({ metadata, buttonLabel }) {
 
     return (
         <div className='flex justify-center md:justify-start pt-8'>
-            <button onClick={handleClick} className={`block rounded-2xl w-80 py-4 ${buttonLabel === 'Submit Changes' ? 'bg-indigo-500 hover:bg-indigo-200' : 'bg-emerald-500 hover:bg-emerald-200'} text-white text-md font-light`}>
+            <button onClick={handleClick} className={`block rounded-2xl w-80 py-4 ${buttonLabel === 'Submit Changes' ? 'bg-indigo-500' : 'bg-emerald-500 hover:bg-emerald-200'} text-white text-md font-light`}>
                 {buttonLabel}
             </button>
         </div >
