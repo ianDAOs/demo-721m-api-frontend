@@ -866,6 +866,10 @@ video {
   justify-content: stretch;
 }
 
+.justify-items-center {
+  justify-items: center;
+}
+
 .gap-4 {
   gap: 1rem;
 }
@@ -2251,6 +2255,10 @@ video {
 
   .md\:justify-center {
     justify-content: center;
+  }
+
+  .md\:justify-items-start {
+    justify-items: start;
   }
 
   .md\:px-8 {
