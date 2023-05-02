@@ -1,9 +1,11 @@
 import React from 'react';
+import { SYN_API_URL, FRONTEND_REPO_URL } from '../data/config';
 
 export default function Footer() {
     return (
-        <div className='text-white'>
-            <p>This demo is built with ERC-721M and Syndicates SDK/APIs see code</p>
+        <div className='pt-8 pb-12 text-center font-thin text-white'>
+            <p className='pb-4 text-3xl'>✺</p>
+            <p className='text-sm'>This demo {`(`}<a href={FRONTEND_REPO_URL} className='text-sky-400'>frontend repo</a>{`)`} is built with ERC-721M and Syndicate{`'`}s APIs {`(`}<a href={SYN_API_URL} className='text-sky-400'>documentation</a>{`)`}</p>
         </div>
     );
 }
