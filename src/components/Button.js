@@ -56,6 +56,8 @@ export default function Button({ metadata, buttonLabel }) {
     };
 
     return (
-        <button onClick={handleClick}>{buttonLabel}</button>
+        <div className='pt-8'>
+            <button onClick={handleClick} className='block rounded-2xl px-24 py-3 bg-emerald-500 hover:bg-emerald-200 text-white text-lg font-light'>{buttonLabel}</button>
+        </div>
     );
 }
