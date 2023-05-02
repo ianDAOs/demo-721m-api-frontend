@@ -5,7 +5,7 @@ export default function Metadata({ metadata }) {
 
     return (
         <div>
-            <button className='rounded-full bg-indigo-500 px-4 py-2 text-xs font-thin text-white'>NFT Configuration & Metadata</button>
+            <button className='rounded-full outline outline-1 outline-indigo-400 px-4 py-2 text-xs font-thin text-white'>NFT Configuration & Metadata</button>
             <div className='pt-6 text-white text-xs font-mono font-light'>
                 <div>
                     <p>{'{'} </p>
