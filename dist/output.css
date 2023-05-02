@@ -997,6 +997,10 @@ video {
   background-color: rgb(125 211 252 / var(--tw-bg-opacity));
 }
 
+.bg-sky-500\/50 {
+  background-color: rgb(14 165 233 / 0.5);
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -1119,6 +1123,11 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .pt-5 {
