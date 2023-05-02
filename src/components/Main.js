@@ -23,7 +23,7 @@ export default function Main({ buttonLabel }) {
     }, []);
 
     return (
-        <div className='overflow-auto'>
+        <div>
             <Title metadata={metadata} />
             <div className='mx-auto grid grid-cols-1 md:grid-cols-2 justify-stretch'>
                 <div>
