@@ -11,9 +11,9 @@ export default function Selector({ label, options, currentOption, setCurrentOpti
     };
 
     return (
-        <div>
+        <div className='flex justify-center md:justify-start pt-8'>
             <SelectorButton buttonLabel="Prev" onClick={() => handleOptionChange(-1)} />
-            <p className='text-md text-white font-mono font-light'>{label}: {currentOption}</p>
+            <p className='py-3 text-md text-white font-mono font-light text-emerald-300'>{label}: {currentOption}</p>
             <SelectorButton buttonLabel="Next" onClick={() => handleOptionChange(1)} />
         </div>
     );
