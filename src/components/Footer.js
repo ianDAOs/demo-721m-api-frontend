@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SYN_API_URL, FRONTEND_REPO_URL } from '../data/config';
+import { SYN_API_URL } from '../data/config';
 
 export default function Footer() {
     return (
