@@ -38,7 +38,7 @@ export default function Button({ metadata, buttonLabel, token }) {
 
                     const productDescription = `${first} ${second}`;
 
-                    const uploadResponse = await uploadImage(first, second);
+                    const uploadResponse = await uploadImage(first, second, token);
                     const ipfsHash = uploadResponse.data.ipfsHash;
 
                     // Generate the full image URL with the IPFS hash
@@ -46,7 +46,7 @@ export default function Button({ metadata, buttonLabel, token }) {
 
                     // Update the metadata with the new image URL
                     const updatedMetadata = { ...metadata, description: productDescription, image: imageUrl };
-                    const updateResponse = await updateMetadata(updatedMetadata);
+                    const updateResponse = await updateMetadata(updatedMetadata, token);
 
                     // Check for a successful response
                     if (updateResponse.status === 200) {
