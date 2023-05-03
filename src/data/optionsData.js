@@ -1,5 +1,5 @@
 // Array of options for the possible styles
-export const styles = ['Low-rise sneaker', 'Basketball shoe', 'Running shoe'];
+export const styles = ['Low-rise Sneaker', 'Basketball Shoe', 'Running Shoe'];
 
 // Array of options for the possible colors
 export const colors = ['White', 'Black', 'Multicolor'];

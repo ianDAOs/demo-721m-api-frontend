@@ -20,13 +20,25 @@ export default function Button({ metadata, buttonLabel, token }) {
                 // Upload the image
                 try {
 
-                    const style = findAttribute(metadata.attributes, "Style");
-                    const color = findAttribute(metadata.attributes, "Color");
+                    let firstOption, secondOption;
 
-                    const productDescription = `${color} ${style}`;
+                    if (token === 1) {
+                        firstOption = 'Color';
+                        secondOption = 'Style';
+                    } else if (token === 2) {
+                        firstOption = 'Event';
+                        secondOption = 'Type';
+                    } else {
+                        firstOption = 'Color';
+                        secondOption = 'Style';
+                    }
 
-                    const uploadResponse = await uploadImage(style, color);
+                    const first = findAttribute(metadata.attributes, firstOption);
+                    const second = findAttribute(metadata.attributes, secondOption);
 
+                    const productDescription = `${first} ${second}`;
+
+                    const uploadResponse = await uploadImage(first, second);
                     const ipfsHash = uploadResponse.data.ipfsHash;
 
                     // Generate the full image URL with the IPFS hash
@@ -63,5 +75,3 @@ export default function Button({ metadata, buttonLabel, token }) {
         </div >
     );
 }
-
-// need to update
