@@ -9,7 +9,6 @@ export default function Options({ metadata, setMetadata }) {
     const initialStyle = metadata ? findAttribute(metadata.attributes, 'Style') : '';
     const initialColor = metadata ? findAttribute(metadata.attributes, 'Color') : '';
 
-
     // useState React hooks for style and color
     const [currentStyle, setCurrentStyle] = useState(initialStyle);
     const [currentColor, setCurrentColor] = useState(initialColor);
@@ -46,3 +45,5 @@ export default function Options({ metadata, setMetadata }) {
         </div>
     );
 }
+
+// need to update

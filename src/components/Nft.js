@@ -28,3 +28,5 @@ export default function Nft({ metadata }) {
         </div>
     );
 }
+
+// need to update

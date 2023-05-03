@@ -31,7 +31,7 @@ export default function Main({ buttonLabel }) {
 
     return (
         <div>
-            <Title metadata={metadata} />
+            <Title metadata={metadata} location={location} />
             <div className='mx-auto grid grid-cols-1 md:grid-cols-2 justify-stretch'>
                 <div>
                     <Nft metadata={metadata} />
