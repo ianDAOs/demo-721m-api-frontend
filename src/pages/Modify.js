@@ -9,12 +9,13 @@ export default function Modify() {
     // Get the metadata from the location state
     const location = useLocation();
     const metadata = location.state?.metadata;
+    const token = location.state?.token;
 
     return (
         <div>
             <h1>Modify Page</h1>
             <Header />
-            <MainModify metadata={metadata} buttonLabel='Submit Changes' />
+            <MainModify metadata={metadata} token={token} buttonLabel='Submit Changes' />
             <Footer />
         </div>
     );

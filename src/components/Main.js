@@ -37,7 +37,7 @@ export default function Main({ buttonLabel }) {
                 </div>
                 <div className='md:pl-12 pl-6 md:pr-20 pr-6 whitespace-normal overflow-wrap break-all'>
                     <Metadata metadata={metadata} />
-                    <Button metadata={metadata} buttonLabel={buttonLabel} />
+                    <Button metadata={metadata} token={token} buttonLabel={buttonLabel} />
                 </div>
             </div>
 

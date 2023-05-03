@@ -4,7 +4,7 @@ import { updateMetadata } from '../services/updateMetadataService';
 import { uploadImage } from '../services/uploadImageService';
 import { findAttribute } from '../helpers/findAttribute';
 
-export default function Button({ metadata, buttonLabel }) {
+export default function Button({ metadata, buttonLabel, token }) {
 
     const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ export default function Button({ metadata, buttonLabel }) {
             }
         } else if (buttonLabel === 'Click to Modify NFT') {
             // Navigate to the /modify route
-            navigate('/modify', { state: { metadata } });
+            navigate('/modify', { state: { metadata, token } });
         }
     };
 

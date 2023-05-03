@@ -86,5 +86,3 @@ export default function Metadata({ metadata }) {
         </div >
     );
 }
-
-// need to update
