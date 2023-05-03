@@ -1,10 +1,8 @@
 import React from 'react';
-import { routeToToken } from '../helpers/routeToToken';
 import { findAttribute } from '../helpers/findAttribute';
 
-export default function Title({ metadata, location }) {
+export default function Title({ metadata, token }) {
 
-    const token = routeToToken(location.pathname);
     let first, second, third;
 
     if (!metadata || !metadata.attributes) {

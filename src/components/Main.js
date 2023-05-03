@@ -11,12 +11,11 @@ export default function Main({ buttonLabel }) {
 
     const [metadata, setMetadata] = useState({});
     const location = useLocation();
+    const token = routeToToken(location.pathname);
 
     // Fetch data from Syndicate API and set to state
     useEffect(() => {
         const fetchData = async () => {
-
-            const token = routeToToken(location.pathname);
 
             try {
                 const data = await fetchMetadata(token);
@@ -27,14 +26,14 @@ export default function Main({ buttonLabel }) {
 
         };
         fetchData();
-    }, [location]);
+    }, [location, token]);
 
     return (
         <div>
-            <Title metadata={metadata} location={location} />
+            <Title metadata={metadata} token={token} />
             <div className='mx-auto grid grid-cols-1 md:grid-cols-2 justify-stretch'>
                 <div>
-                    <Nft metadata={metadata} />
+                    <Nft metadata={metadata} token={token} />
                 </div>
                 <div className='md:pl-12 pl-6 md:pr-20 pr-6 whitespace-normal overflow-wrap break-all'>
                     <Metadata metadata={metadata} />
