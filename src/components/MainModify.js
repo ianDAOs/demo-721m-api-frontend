@@ -13,7 +13,7 @@ export default function MainModify({ metadata: initialMetadata, buttonLabel, tok
             <Title metadata={metadata} token={token} />
             <div className='mx-auto grid grid-cols-1 md:grid-cols-2 justify-stretch'>
                 <div>
-                    <Nft metadata={metadata} />
+                    <Nft metadata={metadata} token={token} />
                 </div>
                 <div className='md:pl-12 pl-6 md:pr-20 pr-6 whitespace-normal overflow-wrap break-all'>
                     <Options metadata={metadata} setMetadata={setMetadata} />
