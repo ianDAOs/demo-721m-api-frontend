@@ -1,49 +1,64 @@
 import React, { useState, useEffect } from 'react';
 import Selector from './Selector';
-import { styles, colors } from '../data/optionsData';
+import { styles, colors, events, types } from '../data/optionsData';
 import { findAttribute } from '../helpers/findAttribute';
 
-export default function Options({ metadata, setMetadata }) {
+export default function Options({ metadata, setMetadata, token }) {
 
-    // Get the initial style and color attributes
-    const initialStyle = metadata ? findAttribute(metadata.attributes, 'Style') : '';
-    const initialColor = metadata ? findAttribute(metadata.attributes, 'Color') : '';
+    let firstOption, secondOption, firstOptionsArray, secondOptionsArray, initialFirstOption, initialSecondOption;
 
-    // useState React hooks for style and color
-    const [currentStyle, setCurrentStyle] = useState(initialStyle);
-    const [currentColor, setCurrentColor] = useState(initialColor);
+    if (token === 1) {
+        firstOption = 'Color';
+        secondOption = 'Style';
+        firstOptionsArray = colors;
+        secondOptionsArray = styles;
+    } else if (token === 2) {
+        firstOption = 'Event';
+        secondOption = 'Type';
+        firstOptionsArray = events;
+        secondOptionsArray = types;
+    } else {
+        firstOption = 'Color';
+        secondOption = 'Style';
+        firstOptionsArray = colors;
+        secondOptionsArray = styles;
+    }
+
+    initialFirstOption = metadata ? findAttribute(metadata.attributes, firstOption) : '';
+    initialSecondOption = metadata ? findAttribute(metadata.attributes, secondOption) : '';
+
+    const [currentFirstOption, setCurrentFirstOption] = useState(initialFirstOption);
+    const [currentSecondOption, setCurrentSecondOption] = useState(initialSecondOption);
 
     useEffect(() => {
         // Update the style and color attributes while preserving other metadata fields and values
         setMetadata(prevMetadata => ({
             ...prevMetadata,
             attributes: prevMetadata.attributes.map(attr => {
-                if (attr.trait_type === 'Style') {
-                    return { ...attr, value: currentStyle };
-                } else if (attr.trait_type === 'Color') {
-                    return { ...attr, value: currentColor };
+                if (attr.trait_type === firstOption) {
+                    return { ...attr, value: currentFirstOption };
+                } else if (attr.trait_type === secondOption) {
+                    return { ...attr, value: currentSecondOption };
                 }
                 return attr;
             }),
         }));
-    }, [currentStyle, currentColor, setMetadata]);
+    }, [firstOption, secondOption, currentFirstOption, currentSecondOption, setMetadata]);
 
     return (
         <div>
             <Selector
-                label="Style"
-                options={styles}
-                currentOption={currentStyle}
-                setCurrentOption={setCurrentStyle}
+                label={firstOption}
+                options={firstOptionsArray}
+                currentOption={currentFirstOption}
+                setCurrentOption={setCurrentFirstOption}
             />
             <Selector
-                label="Color"
-                options={colors}
-                currentOption={currentColor}
-                setCurrentOption={setCurrentColor}
+                label={secondOption}
+                options={secondOptionsArray}
+                currentOption={currentSecondOption}
+                setCurrentOption={setCurrentSecondOption}
             />
         </div>
     );
 }
-
-// need to update

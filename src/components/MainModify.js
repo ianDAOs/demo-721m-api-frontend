@@ -16,7 +16,7 @@ export default function MainModify({ metadata: initialMetadata, buttonLabel, tok
                     <Nft metadata={metadata} token={token} />
                 </div>
                 <div className='md:pl-12 pl-6 md:pr-20 pr-6 whitespace-normal overflow-wrap break-all'>
-                    <Options metadata={metadata} setMetadata={setMetadata} />
+                    <Options metadata={metadata} setMetadata={setMetadata} token={token} />
                     <Button metadata={metadata} token={token} buttonLabel={buttonLabel} />
                 </div>
             </div>
@@ -24,5 +24,3 @@ export default function MainModify({ metadata: initialMetadata, buttonLabel, tok
     );
 
 }
-
-// need to update

@@ -18,5 +18,3 @@ export default function Selector({ label, options, currentOption, setCurrentOpti
         </div>
     );
 }
-
-// need to update
