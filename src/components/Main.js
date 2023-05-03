@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Title from './Title';
 import Nft from './Nft';
 import Metadata from './Metadata';
 import Button from './Button';
+import { routeToToken } from '../helpers/routeToToken';
 import { fetchMetadata } from '../services/fetchMetadataService';
 
 export default function Main({ buttonLabel }) {
 
     const [metadata, setMetadata] = useState({});
+    const location = useLocation();
 
     // Fetch data from Syndicate API and set to state
     useEffect(() => {
         const fetchData = async () => {
+
+            const token = routeToToken(location.pathname);
+
             try {
-                const data = await fetchMetadata();
+                const data = await fetchMetadata(token);
                 setMetadata(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
+
         };
         fetchData();
     }, []);
