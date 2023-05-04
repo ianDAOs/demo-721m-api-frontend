@@ -8,20 +8,23 @@ export default function Button({ metadata, buttonLabel, token }) {
 
     const navigate = useNavigate();
 
-    // Handle the click event, make the API call, then navigate to the change page
+    // Handle the click event, make the API call, then navigate to the correct route/page
     const handleClick = async () => {
 
+        // Update NFT metadata with Syndicate's APIs if the user is trying to submit changes
         if (buttonLabel === 'Submit Changes') {
+
             // Navigate to the loading page
             navigate('/loading');
 
             // Check if metadata and metadata.attributes are available
             if (metadata && metadata.attributes) {
-                // Upload the image
+
                 try {
 
                     let firstOption, secondOption;
 
+                    // Check which token is being modified
                     if (token === 1) {
                         firstOption = 'Color';
                         secondOption = 'Style';
@@ -33,24 +36,26 @@ export default function Button({ metadata, buttonLabel, token }) {
                         secondOption = 'Style';
                     }
 
+                    // Get the values of the first and second attributes being changed
                     const first = findAttribute(metadata.attributes, firstOption);
                     const second = findAttribute(metadata.attributes, secondOption);
 
+                    // Generate the product description based on the attribute values
                     const productDescription = `${first} ${second}`;
 
+                    // Upload the image using Syndicate's APIs to IPFS, get the IPFS hash, and generate the image URL
                     const uploadResponse = await uploadImage(first, second, token);
                     const ipfsHash = uploadResponse.data.ipfsHash;
-
-                    // Generate the full image URL with the IPFS hash
                     const imageUrl = `https://cloudflare-ipfs.com/ipfs/${ipfsHash}`;
 
-                    // Update the metadata with the new image URL
+                    // Update the metadata using Syndicate's APIs with the new metadata, product description, and image URL
                     const updatedMetadata = { ...metadata, description: productDescription, image: imageUrl };
                     const updateResponse = await updateMetadata(updatedMetadata, token);
 
                     // Check for a successful response
                     if (updateResponse.status === 200) {
-                        // Wait for the loading animation to finish, then navigate to the home page
+
+                        // Wait for the loading animation to finish, then navigate to the correct route/page
                         setTimeout(() => {
 
                             if (token === 1) {
@@ -61,7 +66,7 @@ export default function Button({ metadata, buttonLabel, token }) {
                                 navigate('/');
                             }
 
-                        }, 10000); // Adjust this value according to your loading animation duration
+                        }, 10000); // Adjust this value according to the loading animation total duration
                     } else {
                         console.error('Error updating token metadata:', updateResponse);
                     }
@@ -69,8 +74,9 @@ export default function Button({ metadata, buttonLabel, token }) {
                     console.error('Error uploading image and updating token metadata:', error);
                 }
             }
+
         } else if (buttonLabel === 'Click to Modify NFT') {
-            // Navigate to the /modify route
+            // Navigate to the /modify route if the user is trying to modify an NFT
             navigate('/modify', { state: { metadata, token } });
         }
     };
