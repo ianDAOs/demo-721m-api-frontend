@@ -57,9 +57,7 @@ export default function Button({ metadata, buttonLabel, token }) {
                     if (updateResponse.status === 200) {
 
                         const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 10000));
-                        await Promise.all([updatedResponse, timeoutPromise]);
-
-
+                        await Promise.all([updateResponse, timeoutPromise]);
 
                         // Wait for the loading animation to finish, then navigate to the correct route/page
                         // setTimeout(() => {
