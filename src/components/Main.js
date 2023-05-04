@@ -15,12 +15,16 @@ export default function Main({ buttonLabel }) {
     const location = useLocation();
     const token = routeToToken(location.pathname);
 
-    // Fetch data from Syndicate API and set to metadata state
+    // Fetch data from Syndicate API and set to metadata state if metadata has not been passed in the location state
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await fetchMetadata(token);
-                setMetadata(data);
+                if (location.state && location.state.metadata) {
+                    setMetadata(location.state.metadata);
+                } else {
+                    const data = await fetchMetadata(token);
+                    setMetadata(data);
+                }
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
