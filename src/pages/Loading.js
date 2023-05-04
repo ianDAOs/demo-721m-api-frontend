@@ -23,15 +23,20 @@ export default function Loading() {
             const timer = setTimeout(() => {
                 setCompletedSteps([...completedSteps, steps[currentStep]]);
                 setCurrentStep(currentStep + 1);
-            }, 1000); // Change duration (1000 ms) as needed
+            }, 1000);
 
             return () => {
                 clearTimeout(timer);
             };
         } else {
-            // Restart the animation after it finishes
-            setCurrentStep(0);
-            setCompletedSteps([]);
+            const timer = setTimeout(() => {
+                setCurrentStep(0);
+                setCompletedSteps([]);
+            }, 1000);
+
+            return () => {
+                clearTimeout(timer);
+            };
         }
     }, [currentStep, completedSteps]);
 

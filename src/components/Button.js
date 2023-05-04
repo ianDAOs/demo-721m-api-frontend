@@ -56,12 +56,11 @@ export default function Button({ metadata, buttonLabel, token }) {
                     // Check for a successful response
                     if (updateResponse.status === 200) {
 
-                        const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 10000));
+                        // Wait 10 seconds before navigating to the /success route
+                        const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 9000));
                         await Promise.all([updateResponse, timeoutPromise]);
 
-                        // Wait for the loading animation to finish, then navigate to the correct route/page
-                        // setTimeout(() => {
-
+                        // Navigate to the /success route if the API call was successful
                         if (token === 1) {
                             navigate('/');
                         } else if (token === 2) {
@@ -70,7 +69,6 @@ export default function Button({ metadata, buttonLabel, token }) {
                             navigate('/');
                         }
 
-                        // }, 10000); // Adjust this value according to the loading animation total duration
                     } else {
                         console.error('Error updating token metadata:', updateResponse);
                     }
