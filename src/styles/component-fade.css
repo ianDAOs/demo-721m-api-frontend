@@ -1,0 +1,10 @@
+.component-fade-appear {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.component-fade-appear-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms, transform 500ms;
+}

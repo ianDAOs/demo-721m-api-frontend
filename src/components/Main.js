@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import Title from './Title';
 import Nft from './Nft';
 import Metadata from './Metadata';
 import Button from './Button';
 import { routeToToken } from '../helpers/routeToToken';
 import { fetchMetadata } from '../services/fetchMetadataService';
+import '../styles/component-fade.css';
 
 // Component for rendering the main section of the website with the NFT image, metadata, and buttons
 export default function Main({ buttonLabel }) {
@@ -30,14 +32,22 @@ export default function Main({ buttonLabel }) {
 
     return (
         <div>
-            <Title metadata={metadata} token={token} />
+            <CSSTransition in={true} classNames="component-fade" appear={true} timeout={500}>
+                <Title metadata={metadata} token={token} />
+            </CSSTransition>
             <div className='mx-auto grid grid-cols-1 md:grid-cols-2 justify-stretch'>
                 <div>
-                    <Nft metadata={metadata} token={token} />
+                    <CSSTransition in={true} classNames="component-fade" appear={true} timeout={500}>
+                        <Nft metadata={metadata} token={token} />
+                    </CSSTransition>
                 </div>
                 <div className='md:pl-12 pl-6 md:pr-20 pr-6 whitespace-normal overflow-wrap break-all'>
-                    <Metadata metadata={metadata} />
-                    <Button metadata={metadata} token={token} buttonLabel={buttonLabel} />
+                    <CSSTransition in={true} classNames="component-fade" appear={true} timeout={500}>
+                        <Metadata metadata={metadata} />
+                    </CSSTransition>
+                    <CSSTransition in={true} classNames="component-fade" appear={true} timeout={500}>
+                        <Button metadata={metadata} token={token} buttonLabel={buttonLabel} />
+                    </CSSTransition>
                 </div>
             </div>
 
