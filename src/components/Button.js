@@ -52,7 +52,13 @@ export default function Button({ metadata, buttonLabel, token }) {
                     if (updateResponse.status === 200) {
                         // Wait for the loading animation to finish, then navigate to the home page
                         setTimeout(() => {
-                            navigate('/');
+
+                            if (token === 1) {
+                                navigate('/');
+                            } else if (token === 2) {
+                                navigate('/events')
+                            }
+
                         }, 10000); // Adjust this value according to your loading animation duration
                     } else {
                         console.error('Error updating token metadata:', updateResponse);
