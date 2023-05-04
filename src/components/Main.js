@@ -32,20 +32,20 @@ export default function Main({ buttonLabel }) {
 
     return (
         <div>
-            <CSSTransition in={true} classNames="component-fade" appear={true} timeout={500}>
+            <CSSTransition in={true} classNames="component-fade" appear={true} timeout={2000}>
                 <Title metadata={metadata} token={token} />
             </CSSTransition>
             <div className='mx-auto grid grid-cols-1 md:grid-cols-2 justify-stretch'>
                 <div>
-                    <CSSTransition in={true} classNames="component-fade" appear={true} timeout={500}>
+                    <CSSTransition in={true} classNames="component-fade" appear={true} timeout={2000}>
                         <Nft metadata={metadata} token={token} />
                     </CSSTransition>
                 </div>
                 <div className='md:pl-12 pl-6 md:pr-20 pr-6 whitespace-normal overflow-wrap break-all'>
-                    <CSSTransition in={true} classNames="component-fade" appear={true} timeout={500}>
+                    <CSSTransition in={true} classNames="component-fade" appear={true} timeout={2000}>
                         <Metadata metadata={metadata} />
                     </CSSTransition>
-                    <CSSTransition in={true} classNames="component-fade" appear={true} timeout={500}>
+                    <CSSTransition in={true} classNames="component-fade" appear={true} timeout={2000}>
                         <Button metadata={metadata} token={token} buttonLabel={buttonLabel} />
                     </CSSTransition>
                 </div>
