@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
+// Array that stores the navigation items and routes
 const navigation = [
     { name: 'Retail', to: '/' },
     { name: 'Events', to: '/events' },
 ];
 
+// Component for rendering the website header, navigation links, and responsive mobile menu
 export default function Header() {
+
+    // React hook for managing the mobile menu state
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
@@ -17,7 +21,6 @@ export default function Header() {
             <nav className="mx-auto flex items-center justify-between p-8 px-12" aria-label="Global">
 
                 <div className="flex">
-
                     <div className="hidden sm:flex gap-x-16">
                         {navigation.map((item) => (
                             <Link key={item.name} to={item.to} className="text-sm font-extralight text-gray-400 hover:text-white">

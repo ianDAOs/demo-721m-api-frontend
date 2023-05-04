@@ -2,12 +2,15 @@ import React from 'react';
 import { OS_URL, ES_URL } from '../data/config';
 import loadingImage from '../assets/images/image_loading.png';
 
+// Component for rendering the NFT image section of the website
 export default function Nft({ metadata, token }) {
 
+    // If metadata is not yet loaded, display loading message
     if (!metadata) {
         return <p>Loading...</p>;
     }
 
+    // Generate URLs for Opensea and Etherscan
     const osUrl = `${OS_URL}/${token}`;
     const esUrl = `${ES_URL}/${token}`;
 

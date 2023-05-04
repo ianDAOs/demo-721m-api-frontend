@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Component for rendering the metadata section of the website
 export default function Metadata({ metadata }) {
 
     return (

@@ -4,6 +4,7 @@ import { updateMetadata } from '../services/updateMetadataService';
 import { uploadImage } from '../services/uploadImageService';
 import { findAttribute } from '../helpers/findAttribute';
 
+// Component for rendering the Modify NFT and Submit Changes buttons
 export default function Button({ metadata, buttonLabel, token }) {
 
     const navigate = useNavigate();

@@ -1,10 +1,12 @@
 import React from 'react';
 import { findAttribute } from '../helpers/findAttribute';
 
+// Component for rendering the title and description of the NFT
 export default function Title({ metadata, token }) {
 
     let first, second, third;
 
+    // If metadata are not available, display a loading message
     if (!metadata || !metadata.attributes) {
         return (
             <div>
@@ -16,6 +18,7 @@ export default function Title({ metadata, token }) {
         );
     }
 
+    // Generate the title and description based on the token being viewed
     if (token === 1) {
         first = findAttribute(metadata.attributes, 'Badge');
         second = "L" + findAttribute(metadata.attributes, 'Level');

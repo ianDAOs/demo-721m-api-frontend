@@ -7,23 +7,23 @@ import Button from './Button';
 import { routeToToken } from '../helpers/routeToToken';
 import { fetchMetadata } from '../services/fetchMetadataService';
 
+// Component for rendering the main section of the website with the NFT image, metadata, and buttons
 export default function Main({ buttonLabel }) {
 
+    // React hooks for setting the metadata state and getting the token from the route
     const [metadata, setMetadata] = useState({});
     const location = useLocation();
     const token = routeToToken(location.pathname);
 
-    // Fetch data from Syndicate API and set to state
+    // Fetch data from Syndicate API and set to metadata state
     useEffect(() => {
         const fetchData = async () => {
-
             try {
                 const data = await fetchMetadata(token);
                 setMetadata(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
-
         };
         fetchData();
     }, [location, token]);

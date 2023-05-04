@@ -1,9 +1,10 @@
 import React from 'react';
 import SelectorButton from './SelectorButton';
 
+// Component for rendering the selector buttons for the NFT metadata modify options
 export default function Selector({ label, options, currentOption, setCurrentOption }) {
 
-    // Function to change the current option within the array
+    // Function for handling the change of the current option
     const handleOptionChange = (delta) => {
         const currentIndex = options.indexOf(currentOption);
         const nextIndex = (currentIndex + delta + options.length) % options.length;

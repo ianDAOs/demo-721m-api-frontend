@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SYN_API_URL } from '../data/config';
 
+// Component for rendering the website footer with links to the documentation and About page
 export default function Footer() {
     return (
         <div className='pt-12 pb-14 text-center font-thin text-white'>

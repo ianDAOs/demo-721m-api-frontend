@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SYN_API_URL, FRONTEND_REPO_URL } from '../data/config';
 
+// Component for rendering the About page
 export default function About() {
     return (
         <div className='px-8 pt-10 md:px-36 md:pt-48 text-white text-xl font-thin'>

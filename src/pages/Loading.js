@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Loading.module.css';
 
+// Array of steps to display while loading
 const steps = [
     'Calling proxy server...',
     'Calling Syndicate API...',
@@ -12,6 +13,7 @@ const steps = [
     'Fetching metadata...'
 ];
 
+// Component for rendering the loading animation
 export default function Loading() {
     const [currentStep, setCurrentStep] = useState(0);
     const [completedSteps, setCompletedSteps] = useState([]);

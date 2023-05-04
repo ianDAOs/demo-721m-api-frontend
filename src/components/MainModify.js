@@ -4,8 +4,10 @@ import Nft from './Nft';
 import Options from './Options';
 import Button from './Button';
 
+// Component for rendering the main section of the website with the NFT image, metadata modify options, and buttons
 export default function MainModify({ metadata: initialMetadata, buttonLabel, token }) {
 
+    // React hook for modifying the state of the NFT's metadata
     const [metadata, setMetadata] = useState(initialMetadata);
 
     return (
@@ -22,5 +24,4 @@ export default function MainModify({ metadata: initialMetadata, buttonLabel, tok
             </div>
         </div>
     );
-
 }

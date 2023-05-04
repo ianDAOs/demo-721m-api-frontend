@@ -3,10 +3,12 @@ import Selector from './Selector';
 import { styles, colors, events, types } from '../data/optionsData';
 import { findAttribute } from '../helpers/findAttribute';
 
+// Component for rendering the options for modifying the NFT's metadata
 export default function Options({ metadata, setMetadata, token }) {
 
     let firstOption, secondOption, firstOptionsArray, secondOptionsArray, initialFirstOption, initialSecondOption;
 
+    // Check which token is being modified
     if (token === 1) {
         firstOption = 'Color';
         secondOption = 'Style';
@@ -24,14 +26,16 @@ export default function Options({ metadata, setMetadata, token }) {
         secondOptionsArray = styles;
     }
 
+    // Get the initial values of the first and second attributes being changed
     initialFirstOption = metadata ? findAttribute(metadata.attributes, firstOption) : '';
     initialSecondOption = metadata ? findAttribute(metadata.attributes, secondOption) : '';
 
+    // React hooks for setting the current values of the first and second attributes being changed
     const [currentFirstOption, setCurrentFirstOption] = useState(initialFirstOption);
     const [currentSecondOption, setCurrentSecondOption] = useState(initialSecondOption);
 
+    // Update the metadata state with the current values of the first and second attributes while preserving other metadata fields and values
     useEffect(() => {
-        // Update the style and color attributes while preserving other metadata fields and values
         setMetadata(prevMetadata => ({
             ...prevMetadata,
             attributes: prevMetadata.attributes.map(attr => {
