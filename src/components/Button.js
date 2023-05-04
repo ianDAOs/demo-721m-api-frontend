@@ -56,7 +56,9 @@ export default function Button({ metadata, buttonLabel, token }) {
                             if (token === 1) {
                                 navigate('/');
                             } else if (token === 2) {
-                                navigate('/events')
+                                navigate('/events');
+                            } else {
+                                navigate('/');
                             }
 
                         }, 10000); // Adjust this value according to your loading animation duration
