@@ -26,7 +26,7 @@ export default function Main({ buttonLabel }) {
             }
         };
         fetchData();
-    }, [location, token, buttonLabel]);
+    }, [location, token, metadata]);
 
     return (
         <div>
