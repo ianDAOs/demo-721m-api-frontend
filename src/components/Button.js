@@ -56,18 +56,23 @@ export default function Button({ metadata, buttonLabel, token }) {
                     // Check for a successful response
                     if (updateResponse.status === 200) {
 
+                        const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 10000));
+                        await Promise.all([updatedResponse, timeoutPromise]);
+
+
+
                         // Wait for the loading animation to finish, then navigate to the correct route/page
-                        setTimeout(() => {
+                        // setTimeout(() => {
 
-                            if (token === 1) {
-                                navigate('/');
-                            } else if (token === 2) {
-                                navigate('/events');
-                            } else {
-                                navigate('/');
-                            }
+                        if (token === 1) {
+                            navigate('/');
+                        } else if (token === 2) {
+                            navigate('/events');
+                        } else {
+                            navigate('/');
+                        }
 
-                        }, 10000); // Adjust this value according to the loading animation total duration
+                        // }, 10000); // Adjust this value according to the loading animation total duration
                     } else {
                         console.error('Error updating token metadata:', updateResponse);
                     }
