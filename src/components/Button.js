@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { findAttribute } from '../helpers/findAttribute';
 import { uploadImage } from '../services/uploadImageService';
 import { updateMetadata } from '../services/updateMetadataService';
-import { fetchMetadata } from '../services/fetchMetadataService';
-
 
 // Component for rendering the Modify NFT and Submit Changes buttons
 export default function Button({ metadata, buttonLabel, token }) {
@@ -58,20 +56,17 @@ export default function Button({ metadata, buttonLabel, token }) {
                     // Check for a successful response
                     if (updateResponse.status === 200) {
 
-                        // Fetch the updated metadata from Syndicate's APIs
-                        const data = await fetchMetadata(token);
-
                         // Wait 10 seconds before navigating to the /success route
                         const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 9000));
-                        await Promise.all([updateResponse, data, timeoutPromise]);
+                        await Promise.all([updateResponse, timeoutPromise]);
 
                         // Navigate to the /success route if the API call was successful
                         if (token === 1) {
-                            navigate('/', { state: { metadata: data } });
+                            navigate('/');
                         } else if (token === 2) {
-                            navigate('/events', { state: { metadata: data } });
+                            navigate('/events');
                         } else {
-                            navigate('/', { state: { metadata: data } });
+                            navigate('/');
                         }
 
                     } else {
