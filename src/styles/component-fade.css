@@ -1,6 +1,6 @@
 .component-fade-appear {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(0);
 }
 
 .component-fade-appear-active {
