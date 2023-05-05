@@ -11,7 +11,7 @@ export default function App() {
     <div className="bg-black w-screen h-screen m-0 p-0 overflow-x-hidden overflow-y-scroll">
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path='/events' element={<Events />} />
           <Route path="/modify" element={<Modify />} />
           <Route path="/loading" element={<Loading />} />
