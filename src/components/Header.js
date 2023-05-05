@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Dialog } from '@headlessui/react';
@@ -10,7 +11,7 @@ const navigation = [
 ];
 
 // Component for rendering the website header, navigation links, and responsive mobile menu
-export default function Header() {
+function Header() {
 
     // React hook for managing the mobile menu state
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -91,5 +92,7 @@ export default function Header() {
             </Dialog>
 
         </header >
-    )
+    );
 }
+
+export default React.memo(Header);
