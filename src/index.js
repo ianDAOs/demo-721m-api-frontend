@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import './styles/styles.css'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './styles/styles.css';
 
-// Render the App component into the root element
+import Home from './pages/Home';
+import Events from './pages/Events';
+import Modify from './pages/Modify';
+import About from './pages/About';
+import Loading from './pages/Loading';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/modify" element={<Modify />} />
+        <Route path="/loading" element={<Loading />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
