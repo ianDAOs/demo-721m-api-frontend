@@ -10,7 +10,7 @@ import { fetchMetadata } from '../services/fetchMetadataService';
 import '../styles/component-fade.css';
 
 // Component for rendering the main section of the website with the NFT image, metadata, and buttons
-export default function Main({ buttonLabel }) {
+function Main({ buttonLabel }) {
 
     // React hooks for setting the metadata state and getting the token from the route
     const [metadata, setMetadata] = useState({});
@@ -28,7 +28,7 @@ export default function Main({ buttonLabel }) {
             }
         };
         fetchData();
-    }, [location, token, metadata]);
+    }, [location, token]);
 
     return (
         <div>
@@ -54,3 +54,5 @@ export default function Main({ buttonLabel }) {
         </div>
     );
 }
+
+export default React.memo(Main);
