@@ -12,14 +12,16 @@ import Loading from './pages/Loading';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/modify" element={<Modify />} />
-        <Route path="/loading" element={<Loading />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </Router>
+    <div className="bg-black w-screen h-screen m-0 p-0 overflow-x-hidden overflow-y-scroll">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/modify" element={<Modify />} />
+          <Route path="/loading" element={<Loading />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
+    </div>
   </React.StrictMode>
 );
