@@ -14,7 +14,6 @@ export default function Modify() {
 
     return (
         <div>
-            <h1>Modify Page</h1>
             <Header />
             <MainModify metadata={metadata} token={token} buttonLabel='Submit Changes' />
             <Footer />
